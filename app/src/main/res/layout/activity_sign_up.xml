@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewmodel"
+            type="com.hactyki.ui.auth.AuthViewModel"/>
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#008577"
+        android:orientation="vertical"
+        tools:context=".ui.auth.SignInActivity"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_above="@+id/et_email_user"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="191dp"
+            android:layout_marginBottom="47dp"
+            android:layout_weight="1"
+            android:text="Text" />
+
+        <EditText
+            android:id="@+id/et_password_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="176dp"
+            android:layout_marginBottom="171dp"
+            android:hint="Password"
+            android:text="@={viewmodel.password}"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/et_email_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/et_password_user"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="193dp"
+            android:layout_marginBottom="63dp"
+            android:hint="E-mail"
+            android:text="@={viewmodel.email}"
+            android:inputType="textEmailAddress" />
+
+
+        <Button
+            android:id="@+id/registration_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="162dp"
+            android:layout_marginBottom="91dp"
+            android:onClick="@{()->viewmodel.register()}"
+            android:text="rejestracja" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:onClick="@{(v)->viewmodel.goToSignIn(v)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="174dp"
+            android:layout_marginBottom="23dp"
+            android:text="Logowanie" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</layout>
