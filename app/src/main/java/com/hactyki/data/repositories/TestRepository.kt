@@ -4,5 +4,5 @@ import com.hactyki.classes.Test
 import com.hactyki.data.firebase.FirebaseSource
 
 class TestRepository( private val firebase: FirebaseSource) {
-   // fun saveTestToDatabase(test: Test)=firebase.saveTestToDatabase(test)
+    fun saveTestToDatabase(test: Test)=firebase.saveTestToDatabase(test)
 }

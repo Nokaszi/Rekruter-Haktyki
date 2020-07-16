@@ -1,4 +1,6 @@
 package com.hactyki.classes
 
-class Test(var name:String, var passwoerd:String, var questions: MutableList<Questions>?,  var  author:String) {
+import java.io.Serializable
+
+class Test(var name:String="", var passwoerd:String="", var questions: MutableList<Questions> = emptyList<Questions>().toMutableList(), var  author:String=""):Serializable {
 }

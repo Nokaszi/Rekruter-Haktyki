@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.companyuser.NewQuestionActivity"></activity>
+        <activity android:name=".ui.companyuser.PropertiesTestActivity"></activity>
+        <activity android:name=".ui.companyuser.NewQuestionActivity" />
         <activity android:name=".ui.companyuser.NewTestActivity" />
         <activity android:name=".ui.auth.SignUpActivity" />
         <activity android:name=".ui.companyuser.HomeCompanyUserActivity" />

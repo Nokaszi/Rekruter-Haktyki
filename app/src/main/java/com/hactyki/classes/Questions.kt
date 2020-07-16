@@ -1,5 +1,7 @@
 package com.hactyki.classes
 
-class Questions (var contents:String, var isOpen:Boolean?, var answer:List<String>?){
+import java.io.Serializable
+
+class Questions (var contents:String="", var isOpen:Boolean=false, var answer:ArrayList<String> = arrayListOf<String>("","","","")):Serializable{
 
 }

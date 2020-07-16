@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewmodel"
+            type="com.hactyki.ui.companyuser.CompanyViewModel"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#008577"
+        android:orientation="vertical"
+        tools:context=".ui.companyuser.PropertiesTestActivity"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+        <EditText
+            android:text="@={viewmodel.test.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:inputType="textPersonName"
+            android:textSize="20dp"/>
+        <EditText
+            android:text="@={viewmodel.test.passwoerd}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Hasło"
+            android:inputType="text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:textSize="20dp"/>
+        <Button
+            android:onClick="@{(v)->viewmodel.saveTest(v)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Ok"/>
+    </RelativeLayout>
+</layout>

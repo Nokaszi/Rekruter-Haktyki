@@ -6,32 +6,43 @@ import androidx.lifecycle.ViewModel
 import com.hactyki.classes.Questions
 import com.hactyki.classes.Test
 import com.hactyki.data.repositories.TestRepository
-import com.hactyki.data.repositories.UserRepository
 
 class CompanyViewModel( private val testRepository: TestRepository): ViewModel(){
 
 
-     var question:Questions?= Questions("",true,null)
-     var test=Test("Jakis test","Haslo",null,"")
+     var question:Questions= Questions()
+     var test:Test=Test()
 
 
     fun goToNewTest(view: View){
         Intent(view.context,NewTestActivity::class.java).also{
+            it.putExtra("TEST", test)
             view.context.startActivity(it)
         }
     }
-    fun goToNewQuestion(view:View){
-        Intent(view.context,NewQuestionActivity::class.java).also {
-            view.context.startActivity(it)
-        }
-    }
-    fun pushQuestionToTest(view: View){
-        test.questions?.add(question!!)
-        question=null
-        goToNewTest(view)
-    }
+    fun goToNewQuestion(view: View){
 
-    fun saveTest(){
-       // testRepository.saveTestToDatabase(test)
+        Intent(view.context,NewQuestionActivity::class.java).also {
+            it.putExtra("TEST", test)
+            view.context.startActivity(it)
+        }
+    }
+    fun pushQuestionToTest(view: View) {
+        test.questions.add(question)
+        Intent(view.context, NewTestActivity::class.java).also {
+            it.putExtra("TEST", test)
+            view.context.startActivity(it)
+        }
+    }
+    fun goToPropertiesTest(view: View){
+        Intent(view.context, PropertiesTestActivity::class.java).also {
+            it.putExtra("TEST",test)
+            view.context.startActivity(it)
+        }
+
+    }
+    fun saveTest(view: View){
+        test.let { testRepository.saveTestToDatabase(it) }
+
     }
 }

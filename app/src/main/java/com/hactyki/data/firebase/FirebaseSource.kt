@@ -22,9 +22,9 @@ class FirebaseSource {
     private val firebaseAuth:FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
-    /*private val firebaseData:FirebaseDatabase by lazy{
+    private val firebaseData:FirebaseDatabase by lazy{
         FirebaseDatabase.getInstance()
-    }*/
+    }
 
      fun signIn(email:String, password:String): Completable =
         Completable.create { emitter ->
@@ -55,8 +55,8 @@ class FirebaseSource {
         }
     fun getUser()=firebaseAuth.currentUser
 
-  /*  fun saveTestToDatabase(test:Test){
+    fun saveTestToDatabase(test:Test){
         var testReferance = firebaseData.getReference("Tests")
         testReferance.child(test.name).setValue(test)
-    }*/
+    }
 }

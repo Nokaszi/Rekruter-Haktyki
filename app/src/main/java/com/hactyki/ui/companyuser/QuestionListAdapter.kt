@@ -8,8 +8,8 @@ import com.hactyki.classes.Questions
 import javax.sql.CommonDataSource
 
 
-class QuestionListAdapter(private val context: Context,private val dataSource: List<Questions>)//:BaseAdapter() {
-  /*  override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+class QuestionListAdapter(private val context: Context,private val dataSource: List<Questions>):BaseAdapter() {
+    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         TODO("Not yet implemented")
     }
 
@@ -23,6 +23,5 @@ class QuestionListAdapter(private val context: Context,private val dataSource: L
 
     override fun getCount(): Int {
         return dataSource.size
-    }*/
-{
+    }
 }
