@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.hactyki.ui.companyuser.CompanyViewModel" />
+
+        <variable
+            name="activity"
+            type="com.hactyki.ui.companyuser.TestPropertyActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        tools:context=".ui.companyuser.TestPropertyActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:text="Nazwa: " />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_toEndOf="@+id/name_test"
+            android:text="@={viewmodel.test.name}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/passwoerd_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            android:text="Hasło: " />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_toEndOf="@+id/passwoerd_test"
+            android:text="@={viewmodel.test.password}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/number_of_question_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:text="Ilość pytań: " />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:layout_toEndOf="@+id/number_of_question_tv"
+            android:text="@={activity.numberQuestion}" />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="270dp"
+            android:onClick="@{()->activity.showAnswer()}"
+            android:text="Zobacz odpowiedzi" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="@color/colorSecondary"
+            android:onClick="@{()->activity.goEditTest()}"
+            app:icon="@drawable/ic_mode_edit_black_24dp"
+            app:iconTint="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="@color/colorSecondary"
+            android:onClick="@{()->viewmodel.deleteTest()}"
+            app:icon="@drawable/ic_delete_black_24dp"
+            app:iconTint="@color/white"
+            tools:ignore="RelativeOverlap" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "134021037106",
+    "firebase_url": "https://hactyki2020.firebaseio.com",
+    "project_id": "hactyki2020",
+    "storage_bucket": "hactyki2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134021037106:android:2a6f5cc06a8178a9d5d02b",
+        "android_client_info": {
+          "package_name": "com.hactyki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134021037106-ilev1n0d90prvlj67r6md1m9frq0abcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4wD8ovTaBTHQyU0p0rtK332OZX8vmibk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134021037106-ilev1n0d90prvlj67r6md1m9frq0abcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

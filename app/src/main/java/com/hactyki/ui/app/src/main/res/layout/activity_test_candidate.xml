@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.hactyki.ui.candidateuser.CandidateViewModel" />
+
+        <variable
+            name="activity"
+            type="com.hactyki.ui.candidateuser.TestCandidateActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.candidateuser.TestCandidateActivity">
+
+        <TextView
+            android:id="@+id/questionId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="Pytanie " />
+
+        <TextView
+            android:id="@+id/question_contents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="50dp"
+            android:hint="pytanie" />
+
+        <EditText
+            android:id="@+id/open_answer_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question_contents"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="100dp"
+            android:background="#DCDCDC"
+            android:inputType="textMultiLine"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/close_answer_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question_contents"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/answer1_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Odpowiedź 1" />
+
+            <RadioButton
+                android:id="@+id/answer2_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Odpowiedź 2" />
+
+            <RadioButton
+                android:id="@+id/answer3_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Odpowiedź 3" />
+
+            <RadioButton
+                android:id="@+id/answer4_rbtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Odpowiedź 4" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:onClick="@{()->activity.nextQuestion()}"
+                android:text="Next" />
+
+            <Button
+                android:id="@+id/previous_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="25dp"
+                android:onClick="@{()->activity.previousQuestion()}"
+                android:text="previous"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.hactyki.ui.candidateuser.CandidateViewModel" />
+
+        <variable
+            name="activity"
+            type="com.hactyki.ui.candidateuser.HomeCandidateActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        tools:context=".ui.candidateuser.HomeCandidateActivity">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/btn_solve_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{()->activity.openDialog()}"
+                android:text="Rozwiąż test" />
+
+            <Button
+                android:id="@+id/btn_show_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_solve_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:onClick="@{()->activity.goToSolvedTest()}"
+                android:text="Rozwiązane testy" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_show_test"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:onClick="@{()->activity.signOut()}"
+                android:text="Wyloguj" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
